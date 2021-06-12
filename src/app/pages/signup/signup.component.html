@@ -1,26 +1,29 @@
-
 <div class="bootstrap-wrapper">
     <div class="container">
         <div class="row" style="margin-top: 20px">
             <div class="col-md-6 offset-md-3">
+                <mat-card class="mb20">
                 <div class="container text-center">
                     <img src="../../../assets/pngwing.com.png" alt="" width="120" height="120">
                 </div>
                 <h1 class="text-center">Register Here !!</h1>
-                {{user | json}}
+                <!-- {{user | json}} -->
                 <form (ngSubmit)="formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
                         <input
+                        required
                         [(ngModel)]="user.username"
                         name="username"
                         type="text"
                         matInput
                         placeholder="Enter here"/>
+                        <mat-hint>User name must be unique !!</mat-hint>
                       </mat-form-field>
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <input
+                        required
                         [(ngModel)]="user.password"
                         name="password"
                         type="password"
@@ -31,6 +34,7 @@
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>First Name</mat-label>
                         <input
+                        required
                         [(ngModel)]="user.firstName"
                         name="firstName"
                         type="text"
@@ -49,6 +53,7 @@
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Email Address</mat-label>
                         <input
+                        required
                         [(ngModel)]="user.email"
                         name="email"
                         type="email"
@@ -58,6 +63,7 @@
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Phone Number</mat-label>
                         <input
+                        required
                         [(ngModel)]="user.phone"
                         name="phone"
                         type="text"
@@ -71,6 +77,7 @@
                         </button>
                     </div>
                 </form>
+                </mat-card>
             </div>
         </div>
     </div>
