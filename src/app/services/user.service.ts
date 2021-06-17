@@ -1,4 +1,4 @@
-  import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseUrl from './helper';
 
@@ -14,6 +14,6 @@ export class UserService {
   //add user
   public addUser(user: any)
   {
-    return this.http.post(`${baseUrl}/user/`,user);
+    return this.http.post(`${baseUrl}/user/add/`,user);
   }
 }

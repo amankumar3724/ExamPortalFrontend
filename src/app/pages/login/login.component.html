@@ -7,10 +7,13 @@
                     <img src="../../../assets/pngwing.com.png" alt="" width="120" height="120">
                 </div>
                 <h1 class="text-center">Login Here !!</h1>
-                <form action="">
+                {{ loginData | json }}
+                <form (ngSubmit)="formSubmit()">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
                         <input
+                        [(ngModel)]="loginData.username"
+                        name="username"
                         required
                         type="text"
                         matInput
@@ -21,6 +24,8 @@
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <input
+                        [(ngModel)]="loginData.password"
+                        name="password"
                         required
                         type="password"
                         matInput
