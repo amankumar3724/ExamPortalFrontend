@@ -12,13 +12,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HomeComponent } from './pages/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { from } from 'rxjs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthInterceptor } from './services/auth.interceptor';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { MatIconModule } from '@angular/material/icon';
     FooterComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    UserDashboardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule,
   ],
-  providers: [],
+  providers: [
+     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

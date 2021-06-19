@@ -7,14 +7,24 @@
   <span>Examportal</span>
   <span class="example-spacer"></span>
   <a
+  *ngIf="!isLoggedIn"
   [routerLink]="'/login'"
   mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       Login
   </a>
   <a
+  *ngIf="!isLoggedIn"
   [routerLink]="'/signup'"
   mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
       Register
+  </a>
+  <a *ngIf="isLoggedIn && user" mat-icon-button class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon">
+    {{ user.username }}
+  </a>
+  <a *ngIf="isLoggedIn"(click)="logout()" mat-icon-button class="example-icon favorite-icon mr20 ml20"
+    aria-label="Example icon-button with heart icon">
+    Logout
   </a>
 
 </mat-toolbar>

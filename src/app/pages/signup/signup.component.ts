@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { analyze } from 'eslint-scope';
+import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -11,7 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userService:UserService,private snack:MatSnackBar) { }
+  constructor(private userService:UserService,private snack:MatSnackBar, private login: LoginService, private router: Router ) { }
 
 
   public user = {
@@ -20,10 +22,17 @@ export class SignupComponent implements OnInit {
     firstName:'',
     lastName:'',
     email:'',
-    phone:'',  
+    phone:'',
   };
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(this.login.isLoggedIn() && this.login.getUserRole()=="Admin"){
+      this.router.navigateByUrl('/admin-dashboard');
+    }
+    else if(this.login.isLoggedIn() && this.login.getUserRole()=="Customer"){
+      this.router.navigateByUrl('/user-dashboard');
+    }
+  }
 
   formSubmit()
   {
@@ -60,5 +69,5 @@ export class SignupComponent implements OnInit {
 
   }
   //this.user
-  
+
 }

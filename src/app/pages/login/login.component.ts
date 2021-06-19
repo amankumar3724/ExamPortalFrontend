@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -13,9 +14,15 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor(private snack:MatSnackBar,private login:LoginService) { }
+  constructor(private snack:MatSnackBar,private login:LoginService, public router:Router) { }
 
   ngOnInit(): void {
+    if(this.login.isLoggedIn() && this.login.getUserRole()=="Admin"){
+      this.router.navigateByUrl('/admin-dashboard');
+    }
+    else if(this.login.isLoggedIn() && this.login.getUserRole()=="Customer"){
+      this.router.navigateByUrl('/user-dashboard');
+    }
   }
   formSubmit() {
     console.log('login btn clicked')
@@ -40,12 +47,41 @@ export class LoginComponent implements OnInit {
       (data:any)=>{
         console.log("success");
         console.log(data);
+
+        //login
+        this.login.loginUser(data.token);
+        this.login.getCurrentUser().subscribe(user =>{
+          this.login.setUser(user);
+          console.log(user);
+
+          // redirect if ADMIN: admin page
+          if(this.login.getUserRole() == 'Admin'){
+
+            this.router.navigateByUrl('/admin-dashboard');
+            this.login.loginStatus.next(true);
+
+          }
+          //redirect if USER: user page
+          else if(this.login.getUserRole() == 'Customer'){
+
+            this.router.navigateByUrl('/user-dashboard');
+             this.login.loginStatus.next(true);
+
+          }else{
+            this.login.logout();
+          }
+
+
+
+        }, error =>{
+          console.log("error");
+        })
       },
       (error)=>{
         console.log('Error !');
         console.log(error);
+        this.snack.open("Invalid Credentials",'',{duration : 3000});
       }
     );
   }
 }
- 
