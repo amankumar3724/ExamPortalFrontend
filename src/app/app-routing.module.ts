@@ -9,6 +9,8 @@ import { AdminGuardGuard } from './services/guard/admin-guard.guard';
 import { UserGuardGuard } from './services/guard/user-guard.guard';
 import { LoginGuard } from './services/guard/login.guard';
 import { SignupGuard } from './services/guard/signup.guard';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 const routes: Routes = [
   {
@@ -39,8 +41,17 @@ const routes: Routes = [
   {
     path: 'admin-dashboard',
     component: DashboardComponent,
-    pathMatch: 'full',
-    canActivate:[AdminGuardGuard]
+    canActivate:[AdminGuardGuard],
+    children: [
+      {
+        path:  '',
+        component: WelcomeComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+    ],
   },
   {
     path:'**',
