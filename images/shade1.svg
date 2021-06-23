@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="139.886" height="121.063" viewBox="0 0 139.886 121.063">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_626" data-name="Rectangle 626" width="81.729" height="83.729" rx="19" transform="translate(319.634 195.098)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 54 30">
+      <image width="54" height="30" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAeCAYAAABnuu2GAAAABHNCSVQICAgIfAhkiAAAAI9JREFUWEftl7ENwCAMBI+R0mX/BTJPKqNIaUCOlJJ/7M5U/5xtTANO4AYuxjjeVOI8IgadDZAy8AUgMzaB0kwjYhD+ELOIMqaGMSNmOzxsjalVXaq3hocaxq2I2Q4PW2Nq7VRTsYitfAO1K6r9rOsHvXI/Zdq2WqnU4Px+oG1XKk9jc9NZ1CXQypgYSltiHa+ztMWHOUM7AAAAAElFTkSuQmCC"/>
+    </pattern>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_699" data-name="Rectangle 699" width="85.071" height="85.071" rx="10" transform="translate(1192 3128)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="shade1" transform="translate(-1285.924 -1133.137)">
+    <g id="Component_55_2" data-name="Component 55 – 2" transform="translate(1285.924 1133.137)">
+      <g id="Mask_Group_41" data-name="Mask Group 41" transform="translate(-113.01 -322.601) rotate(30)" clip-path="url(#clip-path)" style="mix-blend-mode: multiply;isolation: isolate">
+        <g id="Group_1652" data-name="Group 1652" transform="translate(316.825 192)">
+          <rect id="subtle_dots__2X" data-name="subtle_dots_@2X" width="58.719" height="32.622" fill="url(#pattern)"/>
+          <rect id="subtle_dots__2X-2" data-name="subtle_dots_@2X" width="58.719" height="32.622" transform="translate(58.719)" fill="url(#pattern)"/>
+          <rect id="subtle_dots__2X-3" data-name="subtle_dots_@2X" width="58.719" height="32.622" transform="translate(0 32.622)" fill="url(#pattern)"/>
+          <rect id="subtle_dots__2X-4" data-name="subtle_dots_@2X" width="58.719" height="32.622" transform="translate(58.719 32.622)" fill="url(#pattern)"/>
+          <rect id="subtle_dots__2X-5" data-name="subtle_dots_@2X" width="58.719" height="32.622" transform="translate(0 65.244)" fill="url(#pattern)"/>
+          <rect id="subtle_dots__2X-6" data-name="subtle_dots_@2X" width="58.719" height="32.622" transform="translate(58.719 65.244)" fill="url(#pattern)"/>
+        </g>
+      </g>
+      <g id="Rectangle_625" data-name="Rectangle 625" transform="translate(38.5 15.879) rotate(30)" fill="rgba(248,248,248,0)" stroke="#fb4b26" stroke-width="2">
+        <rect width="77" height="77" rx="11" stroke="none"/>
+        <rect x="1" y="1" width="75" height="75" rx="10" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
